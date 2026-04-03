@@ -3,15 +3,15 @@
     <xacro:include filename="panda_leg_L1.xacro"/>
     <xacro:include filename="panda_leg_L2_RB.xacro"/>
     <xacro:include filename="panda_leg_L3.xacro"/>
-    <xacro:include filename="panda_leg_L4.xacro"/>
+    <xacro:include filename="panda_leg_L4_RB.xacro"/>
     <xacro:include filename="panda_leg_L5.xacro"/>
 
     <xacro:macro name="rb_leg" params="prefix parent xyz rpy">
         <xacro:panda_leg_L1 prefix="${prefix}" parent="${parent}" xyz="${xyz}" rpy="${rpy}"/>
         <xacro:panda_leg_L2_rb prefix="${prefix}" parent="${prefix}_L1" xyz="-0.0485 0.00 -0.06210" rpy="${-pi} ${pi/2} 0"/>
         <xacro:panda_leg_L3 prefix="${prefix}" parent="${prefix}_L2" xyz="0.033 -0.11975 0.01875" rpy="${pi/2} ${pi} 0"/>
-        <xacro:panda_leg_L4 prefix="${prefix}" parent="${prefix}_L3" xyz="0.0 -0.09075 0.0" rpy="-${pi/2} 0 0"/>
-        <xacro:panda_leg_L5 prefix="${prefix}" parent="${prefix}_L4" xyz="0 0 -0.031" rpy="0 0 0"/>
+        <xacro:panda_leg_L4_rb prefix="${prefix}" parent="${prefix}_L3" xyz="0.0 -0.09075 0.0" rpy="-${pi/2} 0 0"/>
+        <xacro:panda_leg_L5 prefix="${prefix}" parent="${prefix}_L4" xyz="0 0.007 -0.08" rpy="0 0 0"/>
     </xacro:macro>
 
     <!--! TEST -->

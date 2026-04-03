@@ -37,5 +37,6 @@
     <xacro:include filename="joints.xacro"/>
     <xacro:include filename="materials.xacro"/>
     <xacro:include filename="constants.xacro"/>
+    <!-- <link name="base"/> -->
     <xacro:panda parent="base" fx="0.28" fy="0.075" fz="0.005" bx="-0.03" by="0.04" bz="-0.05"/>
 </robot>

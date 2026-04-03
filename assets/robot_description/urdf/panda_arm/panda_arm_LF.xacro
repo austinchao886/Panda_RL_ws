@@ -6,7 +6,7 @@
     <xacro:include filename="panda_arm_L3.xacro"/>
     <xacro:include filename="panda_arm_L4_LF.xacro"/>
     <xacro:include filename="panda_arm_L5.xacro"/>
-    <xacro:include filename="panda_arm_L6.xacro"/>
+    <xacro:include filename="panda_arm_L6_LF.xacro"/>
     <xacro:include filename="panda_arm_L7.xacro"/>
 
     <xacro:macro name="lf_arm" params="prefix parent xyz rpy">
@@ -16,8 +16,8 @@
         <!-- <xacro:panda_arm_L4_lf prefix="${prefix}" parent="${prefix}_L3" xyz="0.058 0.0195 0.001" rpy="${-pi/2} ${pi/2} ${pi}"/> -->
         <xacro:panda_arm_L4_lf prefix="${prefix}" parent="${prefix}_L3" xyz="0.058 0.0195 0.001" rpy="0 ${pi/2} ${pi}"/>
         <xacro:panda_arm_L5 prefix="${prefix}" parent="${prefix}_L4" xyz="-0.0073 0.016 -0.04725" rpy="${pi/2} ${-pi/2} 0"/>
-        <xacro:panda_arm_L6 prefix="${prefix}" parent="${prefix}_L5" xyz="-0.065 0.021 0" rpy="0 ${pi/2} 0"/>
-        <xacro:panda_arm_L7 prefix="${prefix}" parent="${prefix}_L6" xyz="0 0 -0.031" rpy="0 0 0"/>
+        <xacro:panda_arm_L6_lf prefix="${prefix}" parent="${prefix}_L5" xyz="-0.065 0.021 0" rpy="0 ${pi/2} 0"/>
+        <xacro:panda_arm_L7 prefix="${prefix}" parent="${prefix}_L6" xyz="0 0.007 -0.08" rpy="0 0 0"/>
     </xacro:macro>
 
     <!--! TEST -->

@@ -18,6 +18,10 @@ def generate_launch_description():
             pkg_share,
             "urdf",
             "panda.xacro"
+            # "panda_arm",
+            # "panda_arm_LF.xacro"            
+            # "panda_leg",
+            # "panda_leg_LB.xacro"
         ])
     ])
 

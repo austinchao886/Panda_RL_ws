@@ -2,21 +2,21 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
 
     <xacro:macro name="panda_leg_L5" params="prefix parent xyz rpy">
-        <xacro:fixed_joint name="${prefix}_J5" parent="${parent}" child="${prefix}_L5" xyz="${xyz}" rpy="${rpy}"/>
+        <xacro:revolute_joint name="${prefix}_J5" parent="${parent}" child="${prefix}_L5" xyz="${xyz}" rpy="${rpy}" axis="1 0 0"/>
 
         <link name="${prefix}_L5">
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <cylinder radius="0.01" length="0.005"/>
+                    <mesh filename="${leg_mesh_path}/Link5.dae" scale="1 1 1" />
                 </geometry>
-                <material name="blue" />
+                <!-- <material name="blue" /> -->
             </visual>
 
             <collision>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <cylinder radius="0.01" length="0.005"/>
+                    <mesh filename="${leg_mesh_path}/Link5.dae" scale="1 1 1" />
                 </geometry>
             </collision>
         </link>
