@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda_constants">
+    <xacro:property name="body_mesh_path" value="package://robot_description/meshes/panda_body/"/>
+    <xacro:property name="arm_mesh_path" value="package://robot_description/meshes/panda_arm"/>
+    <xacro:property name="leg_mesh_path" value="package://robot_description/meshes/panda_leg"/>
+    <!-- <xacro:property name="body_mesh_path" value="/home/q200/workspace/src/robot_description/meshes/panda_body"/>
+    <xacro:property name="arm_mesh_path" value="/home/q200/workspace/src/robot_description/meshes/panda_arm"/>
+    <xacro:property name="leg_mesh_path" value="/home/q200/workspace/src/robot_description/meshes/panda_leg"/> -->
+</robot>
+    

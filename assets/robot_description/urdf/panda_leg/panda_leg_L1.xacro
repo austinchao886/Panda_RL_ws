@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+
+    <xacro:macro name="panda_leg_L1" params="prefix parent xyz rpy">
+        <xacro:revolute_joint name="${prefix}_J1" parent="${parent}" child="${prefix}_L1" xyz="${xyz}" rpy="${rpy}" axis="1 0 0" />
+
+        <link name="${prefix}_L1">
+           <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="${leg_mesh_path}/Link1.dae" scale="-1 1 1" />
+                </geometry>
+                <material name="red" />
+            </visual> 
+
+            <collision>
+                <origin xyz="-0.04 0.0 -0.02" rpy="0 0 0" />
+                <geometry>
+                    <cylinder radius="0.035" length="0.075"/>
+                </geometry>
+            </collision>
+        </link>
+    </xacro:macro>
+
+    <!--!TEST -->
+    <!-- <xacro:include filename="../joints.xacro" /> 
+    <xacro:include filename="../constants.xacro" />
+    <xacro:include filename="../materials.xacro" />
+    <link name="base" />
+    <xacro:panda_leg_L1 prefix="RF" parent="base" xyz="0 0 0" rpy="0 0 0" /> -->
+</robot>

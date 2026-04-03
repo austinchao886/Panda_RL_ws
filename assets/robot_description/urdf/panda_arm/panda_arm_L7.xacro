@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+
+    <xacro:macro name="panda_arm_L7" params="prefix parent xyz rpy">
+        <xacro:fixed_joint name="${prefix}_J7" parent="${parent}" child="${prefix}_L7" xyz="${xyz}" rpy="${rpy}"/>
+        <link name="${prefix}_L7">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <cylinder radius="0.01" length="0.005"/>
+                </geometry>
+                <material name="blue" />
+            </visual>
+
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <cylinder radius="0.01" length="0.005"/>
+                </geometry>
+            </collision>
+        </link>
+    </xacro:macro>
+
+    <!--!TEST -->
+    <!-- <xacro:include filename="joints.xacro" />  
+    <xacro:include filename="constants.xacro" />
+    <xacro:include filename="materials.xacro" />
+
+    <link name="base" />
+    <xacro:panda_arm_L7 prefix="RF" parent="base" xyz="0 0 0" rpy="0 0 0" /> -->
+</robot>

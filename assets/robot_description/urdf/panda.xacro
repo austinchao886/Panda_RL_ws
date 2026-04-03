@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+    <xacro:include filename="panda_body/panda_body.xacro"/>
+    <xacro:include filename="panda_arm/panda_arm_LF.xacro"/>
+    <xacro:include filename="panda_arm/panda_arm_RF.xacro"/>
+    <xacro:include filename="panda_leg/panda_leg_LB.xacro"/>
+    <xacro:include filename="panda_leg/panda_leg_RB.xacro"/>
+
+    <!-- <xacro:macro name="panda_body">
+        <link name="body">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.2 0.4 0.025"/>
+                </geometry>
+                <material name="grey" />
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.2 0.4 0.025"/>
+
+                </geometry>
+            </collision>
+        </link>
+    </xacro:macro> -->
+
+    <xacro:macro name="panda" params="parent fx fy fz bx by bz">
+        <xacro:body/>
+        <xacro:rf_arm prefix="RF" parent="body" xyz="${fx} ${-fy} ${fz}" rpy="0 0 ${-pi/2}"/>
+        <xacro:lf_arm prefix="LF" parent="body" xyz="${fx} ${fy} ${fz}" rpy="0 0 ${pi/2}"/> 
+        <xacro:rb_leg prefix="RB" parent="body" xyz="${bx} ${-by} ${bz}" rpy="${-pi/2} 0 0"/> 
+        <xacro:lb_leg prefix="LB" parent="body" xyz="${bx} ${by} ${bz}" rpy="${pi/2} 0 0"/>
+    </xacro:macro>
+    
+    <!--! TEST -->
+    <xacro:include filename="joints.xacro"/>
+    <xacro:include filename="materials.xacro"/>
+    <xacro:include filename="constants.xacro"/>
+    <xacro:panda parent="base" fx="0.28" fy="0.075" fz="0.005" bx="-0.03" by="0.04" bz="-0.05"/>
+</robot>

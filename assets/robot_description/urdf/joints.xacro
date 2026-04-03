@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda_joints">
+    <!-- <xacro:property name="mesh_path" value="package://robot_description/meshes/panda_arm"/> -->
+    
+    <!-- Revolute joints -->
+    <xacro:macro name="revolute_joint" params="name parent child xyz rpy axis">
+        <joint name="${name}" type="revolute">
+            <parent link="${parent}" />
+            <child link="${child}" />
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <axis xyz="${axis}" />
+            <limit lower="-${pi/2}" upper="${pi/2}" velocity="10.0" effort="10.0" />
+            <dynamics damping="0.1" friction="0.0" />
+        </joint>
+    </xacro:macro>
+
+    <xacro:macro name="xm430_joint" params="name parent child xyz rpy axis">
+        <joint name="${name}" type="revolute">
+            <parent link="${parent}" />
+            <child link="${child}" />
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <axis xyz="${axis}" />
+            <limit lower="-1.570796" upper="1.570796" velocity="4.82" effort="2.46" />
+            <dynamics damping="10" friction="0.1" />
+        </joint>
+    </xacro:macro>
+
+    <xacro:macro name="xm540_joint" params="name parent child xyz rpy axis">
+        <joint name="${name}" type="revolute">
+            <parent link="${parent}" />
+            <child link="${child}" />
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <axis xyz="${axis}" />
+            <limit lower="-1.570796" upper="1.570796" velocity="3.16" effort="6.36" />
+            <dynamics damping="10" friction="0.1" />
+        </joint>
+    </xacro:macro>
+
+    <xacro:macro name="fixed_joint" params="name parent child xyz rpy">
+        <joint name="${name}" type="fixed">
+            <origin xyz="${xyz}" rpy="${rpy}" />
+            <parent link="${parent}" />
+            <child link="${child}" />
+        </joint>
+    </xacro:macro>
+</robot>

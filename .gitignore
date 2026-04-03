@@ -1,0 +1,16 @@
+# ROS 2 build artifacts
+build/
+install/
+log/
+*.pyc
+__pycache__/
+
+# Isaac Sim / Isaac Lab generated files
+_isaac_sim/
+*.usd_cache/
+
+# OS / editor
+.DS_Store
+@eaDir/
+*.swp
+.vscode/

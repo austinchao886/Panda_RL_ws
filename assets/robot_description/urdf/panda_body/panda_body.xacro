@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+
+    <xacro:macro name="body">
+        <link name="body">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="${body_mesh_path}/body.dae" scale="1 1 1" />
+                </geometry>
+                <material name="red" />
+            </visual>
+
+            <collision>
+                <origin xyz="0.02 0 -0.025" rpy="0 ${pi/2} 0" />
+                <geometry>
+                    <cylinder radius="0.06" length="0.04"/>
+                </geometry>
+            </collision>
+            <collision>
+                <origin xyz="0.115 0 -0.07" rpy="0 ${pi/2} 0" />
+                <geometry>
+                    <cylinder radius="0.075" length="0.14"/>
+                </geometry>
+            </collision>
+            <collision>
+                <origin xyz="0.25 0 -0.0025" rpy="0 ${pi/2} 0" />
+                <geometry>
+                    <cylinder radius="0.045" length="0.125"/>
+                </geometry>
+            </collision>
+        </link>
+    </xacro:macro>
+
+    <!--! TEST -->
+    <!-- <xacro:include filename="../joints.xacro"/>
+    <xacro:include filename="../materials.xacro"/>
+    <xacro:include filename="../constants.xacro"/> 
+    <xacro:body/> -->
+</robot>
