@@ -14,9 +14,15 @@
             </visual>
 
             <collision>
-                <origin xyz="0 0 0" rpy="0 0 0" />
+                <!-- <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
                     <mesh filename="${arm_mesh_path}/Link7.dae" scale="1 1 1" />
+                </geometry> -->
+                <origin xyz="0.0 0.0 -0.05" rpy="0 0 0" />
+                <geometry>
+                    <!-- <mesh filename="${meshes_path}/Link5.dae" scale="${reflect} 1 1" /> -->
+                    <!-- <cylinder radius="0.015" length="0.07"/> -->
+                    <box size="0.08 0.02 0.05"/> <!-- TODO: set x y z size -->
                 </geometry>
             </collision>
         </link>
