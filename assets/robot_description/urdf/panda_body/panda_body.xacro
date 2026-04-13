@@ -29,6 +29,15 @@
                     <cylinder radius="0.045" length="0.125"/>
                 </geometry>
             </collision>
+
+            <inertial>
+                <origin xyz="0.111021 0.001066 -0.054499" rpy="0 0 0"/>
+                <mass value="0.6"/>
+                <inertia 
+                    ixx="0.00341830" ixy="-0.00001942" ixz="-0.00061387" 
+                    iyy="0.00715863" iyz="-0.00000747" 
+                    izz="0.00795982"/>
+            </inertial>
         </link>
     </xacro:macro>
 

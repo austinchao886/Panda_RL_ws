@@ -19,6 +19,16 @@
                     <cylinder radius="0.035" length="0.075"/>
                 </geometry>
             </collision>
+
+            <!-- X-flipped mesh (scale="-1 1 1"): CoM x negated, ixy and ixz negated -->
+            <inertial>
+                <origin xyz="-0.028971 -0.000107 -0.018559" rpy="0 0 0"/>
+                <mass value="0.399"/>
+                <inertia
+                    ixx="0.00032351" ixy="-0.00000101" ixz="-0.00001007"
+                    iyy="0.00030113" iyz="-0.00000164"
+                    izz="0.00031142"/>
+            </inertial>
         </link>
     </xacro:macro>
 

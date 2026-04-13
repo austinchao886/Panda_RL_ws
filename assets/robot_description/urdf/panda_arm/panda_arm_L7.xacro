@@ -25,6 +25,15 @@
                     <box size="0.08 0.02 0.05"/> <!-- TODO: set x y z size -->
                 </geometry>
             </collision>
+
+            <inertial>
+                <origin xyz="0.001048 -0.007730 -0.047829" rpy="0 0 0"/>
+                <mass value="0.10248"/>
+                <inertia 
+                    ixx="0.00003528" ixy="-0.00000068" ixz="-0.00000123" 
+                    iyy="0.00007729" iyz="-0.00000298" 
+                    izz="0.00005640"/>
+            </inertial>
         </link>
     </xacro:macro>
 

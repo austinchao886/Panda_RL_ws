@@ -3,6 +3,7 @@ from launch.substitutions import Command, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from launch.substitutions import FindExecutable
+from launch_ros.parameter_descriptions import ParameterValue
 
 
 def generate_launch_description():
@@ -11,7 +12,7 @@ def generate_launch_description():
     # ---------------------------------------------------------
     # Robot Description (Xacro → URDF)
     # ---------------------------------------------------------
-    robot_description = Command([
+    robot_description = ParameterValue(Command([
         FindExecutable(name="xacro"),
         " ",
         PathJoinSubstitution([
@@ -19,11 +20,11 @@ def generate_launch_description():
             "urdf",
             "panda.xacro"
             # "panda_arm",
-            # "panda_arm_LF.xacro"            
+            # "panda_arm_LF.xacro"
             # "panda_leg",
             # "panda_leg_LB.xacro"
         ])
-    ])
+    ]), value_type=str)
 
     robot_description_param = {
         "robot_description": robot_description
