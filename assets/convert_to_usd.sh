@@ -1,0 +1,1 @@
+/isaac-lab/isaaclab.sh -p /isaac-lab/scripts/tools/convert_urdf.py /workspace_v2/assets/robot_description/urdf/panda.urdf /workspace_v2/assets/robot_description/usd/panda.usd --joint-stiffness 100 --joint-damping 10 --headless
