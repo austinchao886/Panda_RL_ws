@@ -14,3 +14,6 @@ _isaac_sim/
 @eaDir/
 *.swp
 .vscode/
+logs/
+
+.claude/
